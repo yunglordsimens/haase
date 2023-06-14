@@ -93,6 +93,7 @@ let isDragging = false;
 let draggedImage = null;
 let offsetX = 0;
 let offsetY = 0;
+let isDoubleTap = false;
 
 // Обработчики событий мыши и touch-событий для перемещения изображений
 document.addEventListener('mousedown', startDragging);
@@ -116,10 +117,20 @@ function startDragging(event) {
   if (event.type === 'mousedown' && event.button !== 0) {
     return; // Если нажата не левая кнопка мыши, выходим из функции
   }
-  
+
+  if (event.type === 'touchstart') {
+    if (!isDoubleTap) {
+      isDoubleTap = true;
+      setTimeout(() => {
+        isDoubleTap = false;
+      }, 300); // Устанавливаем таймер на сброс двойного касания через 300 миллисекунд
+      return; // Если это первое касание, выходим из функции
+    }
+  }
+
   const target = event.type === 'touchstart' ? event.touches[0].target : event.target;
   draggedImage = target.closest('.cloned-img');
-  
+
   if (draggedImage) {
     event.preventDefault();
     isDragging = true;
@@ -188,8 +199,6 @@ images.forEach(img => {
     clonedImg.addEventListener('touchstart', startDragging);
     clonedImg.addEventListener('touchmove', dragImage);
     clonedImg.addEventListener('touchend', stopDragging);
-
-    // Добавляем обработчик события двойного клика для удаления изображения
     clonedImg.addEventListener('dblclick', function() {
       this.remove();
     });
@@ -198,5 +207,6 @@ images.forEach(img => {
     document.body.appendChild(clonedImg);
   });
 });
+
 
 //
