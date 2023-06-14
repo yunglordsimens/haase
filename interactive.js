@@ -187,8 +187,8 @@ images.forEach(img => {
     const pageHeight = window.innerHeight;
     const imgWidth = clonedImg.width;
     const imgHeight = clonedImg.height;
-    const x = (pageWidth - imgWidth) / 20;
-    const y = (pageHeight - imgHeight) / 20;
+    const x = (pageWidth - imgWidth) / 2;
+    const y = (pageHeight - imgHeight) / 2;
     clonedImg.style.left = `${x}px`;
     clonedImg.style.top = `${y}px`;
 
@@ -199,14 +199,26 @@ images.forEach(img => {
     clonedImg.addEventListener('touchstart', startDragging);
     clonedImg.addEventListener('touchmove', dragImage);
     clonedImg.addEventListener('touchend', stopDragging);
+
+    // Добавляем обработчик события для закрытия копии
+    clonedImg.addEventListener('click', function() {
+      if (isDoubleTap) {
+        this.remove();
+      }
+    });
+
+    // Добавляем обработчик события двойного клика для закрытия копии
     clonedImg.addEventListener('dblclick', function() {
-      this.remove();
+      if (!isDoubleTap) {
+        this.remove();
+      }
     });
 
     // Добавляем копию изображения в тело документа
     document.body.appendChild(clonedImg);
   });
 });
+
 
 
 //
