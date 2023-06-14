@@ -187,8 +187,8 @@ images.forEach(img => {
     const pageHeight = window.innerHeight;
     const imgWidth = clonedImg.width;
     const imgHeight = clonedImg.height;
-    const x = (pageWidth - imgWidth) / 2;
-    const y = (pageHeight - imgHeight) / 2;
+    const x = (pageWidth - imgWidth) / 20;
+    const y = (pageHeight - imgHeight) / 20;
     clonedImg.style.left = `${x}px`;
     clonedImg.style.top = `${y}px`;
 
