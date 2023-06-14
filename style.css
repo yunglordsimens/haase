@@ -1,0 +1,451 @@
+
+@font-face {
+    font-family: "hotnsexy2" ;
+    src: url(hotnsexy2-Regular.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "glagol" ;
+    src: url(glalolytsia-Regular.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.glagol{
+    font-family:"glagol";
+}
+.cyr{
+    font-family: "hotnsexy2" ;
+}
+.tmn{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/**/
+ol li {
+    margin-left: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/**/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+position: fixed;
+z-index: -1;
+background-color: blue; 
+color: white;
+width: 100%;
+height: 100vh; 
+display: flex;
+flex-direction: column;
+
+}
+
+#type-text {
+    margin: auto;
+    text-transform: uppercase;
+    border-right: 3px solid white;
+    font-size: 64px;
+    animation: cursor 0.75s step-end infinite;
+}
+
+@keyframes cursor {
+    0% {
+      border-color: white;
+    }
+  
+    50% {
+      border-color: transparent;
+    }
+  
+    100% {
+      border-color: white;
+    }
+  }
+  
+  /**/
+  
+.info {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: end;
+  }
+
+.info a {
+    color: white;
+    text-decoration:none;
+}
+.info a:hover {
+    text-decoration-line: underline;
+}
+
+/**/
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background-color: white;
+    position: absolute;
+    top: 110vh; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+}
+
+.main{
+    padding: 1rem;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+
+img.circle-rot{
+    animation: 15s linear 0s normal none infinite running rot;
+    width: 72px;
+}
+
+@keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 
+
+/**/
+h1,h2{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.txt-l{
+    font-size: 72px;
+}
+
+.txt-l1{
+    font-size: 36px;
+}
+
+.txt-t{
+    font-size: 24px;
+}
+
+.txt-sm{
+    font-size: 16px;
+}
+/**/
+
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-basis20{
+    flex-basis: 19%;
+    flex-grow: 1;
+}
+
+.flex-basis80{
+    flex-basis: 79%;
+    flex-grow: 1;
+}
+
+.flex-basis100{
+    flex-basis: 99%;
+    flex-grow: 1;
+}
+
+.border-top{
+    border-top: solid 1px black;
+}
+
+.center{
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+.sps-btw{
+    justify-content: space-between;
+}
+.red{
+    color: red;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+/**/ 
+
+#link{
+    display: flex;
+    flex-direction: column;
+    
+    }
+    
+    
+    #link a{
+        padding: 1rem;
+        border-top: 1px solid black;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-align: justify;
+        text-align-last: justify;
+    }
+    
+    
+    
+    #link a:hover{
+        background-color: black;
+        color: white;
+        border-top: none;
+        border: none;
+        text-align: center;
+        text-align-last: center;
+    }
+/**/
+
+.link-m {
+display: flex;
+flex-direction: column;
+
+}
+
+
+.link-m a{
+    padding: 1rem;
+    border-top: 1px solid black;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+
+
+.link-m a:hover{
+    background-color: black;
+    color: white;
+    border-top: none;
+    border: none;
+    text-align: center;
+    text-align-last: center;
+}
+
+.m-head{
+padding: 0.5rem;
+margin-bottom: 5rem;
+}
+
+.m-head h1{
+padding: 0.3rem;
+}
+
+
+
+.p-menu{
+  padding: 1rem;
+   
+}
+.p-menu a{
+ text-decoration:none;
+ color: black;
+ padding: 0.5rem;
+}
+
+.p-menu a:hover{
+    text-decoration: underline;
+}
+/**/
+.i-txt{
+justify-content: space-between;
+margin-bottom: 2rem;
+}
+
+.s-txt p{
+    padding-bottom: 1rem;
+}
+.remark-txt{
+    padding-top:0.5rem ;
+}
+
+.remark{
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.pad-1{
+padding: 1rem;
+text-align: justify;
+}
+
+.sup-txt{
+    padding-right:1rem ;
+}
+
+/**/
+.vmenu{
+overflow: auto;
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+
+.vmenu::-webkit-scrollbar {
+width: 0;
+height: 0;
+}
+
+/**/
+.img-container{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.item{
+    padding: 1rem;
+}
+
+.item img {
+    width: 20rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.cloned-img {
+    position: fixed;
+    z-index: 9999;
+    width: 35rem;
+    height: auto;
+    cursor: grab;
+  }
+
+/**/
+
+.draggable {
+    user-select: none;
+    color: blue;
+    position: absolute;
+    cursor: grab;
+  }
+
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content{
+        flex-direction: column;
+    }
+    .vmenu{
+        order: -1;
+    }
+    .link-m{
+        width: 100%;
+        height: 40px;
+        overflow: auto;
+-ms-overflow-style: none;
+scrollbar-width: none;
+    }
+
+
+.link-m::-webkit-scrollbar {
+width: 0;
+height: 0;
+}
+    .sticky{
+        position: relative;
+    }
+    main {
+        flex-basis: 100%;
+        flex-grow: 1; 
+    }
+
+
+/**/
+    .sup-txt{
+        display: none;
+    }
+
+    .txt-l {
+        font-size: 36px;
+    }
+
+    .txt-l1 {
+        font-size: 24px;
+    }
+
+    .txt-t {
+        font-size: 14px;
+    }
+
+    .txt-sm {
+        font-size: 12px;
+    }
+
+    img.circle-rot{
+        width: 36px;
+    }
+    /**/
+    .p-menu{
+        padding-top: 1rem;
+        padding-left: 0rem;
+    }
+
+    /**/
+    .img-container{
+        justify-content: center;
+    }
+.item img{
+    width: 18rem;
+    height: auto;
+}
+    .cloned-img{
+        position: fixed;
+    z-index: 9999;
+    width: 30rem;
+    height: auto;
+    }
+    ol li{
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .draggable h2{
+        font-size: 16px;
+    }
+.draggable{
+    font-size: 14px;
+}
+}
+
+@media (max-width: 700px) {
+    .draggable h2{
+        font-size: 12px;
+    }
+.draggable{
+    font-size: 10px;
+}
+}

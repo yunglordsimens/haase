@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ABOUT</title>
+</head>
+<body>
+    <div class="flex wrap cont">
+        <main class="cont ">
+          <div class="m-head flex wrap">
+            <h1 class="txt-l">ABOUT</h1>
+  
+            <div class="p-menu txt-sm ">
+              <nav>
+                <a href="archive.html"> (ARCHIVE)</a>
+                <a href="index.html"> (HOME) </a>
+              </nav>
+            </div>
+          </div>
+
+<section class="pad-1 "> 
+
+                
+
+                  <div class="i-txt">
+                    <h2 class="txt-t">*YOU CAN MOVE TEXT BLOCKS</h2>
+                  </div>
+        </div>
+              </section>
+
+          <section class="pad-1 txt-t draggable">
+            <div class="i-txt ">
+              <h2 class="txt-l1 upper">ABOUT PROJECT</h2>
+            </div>
+            <p class="upper"> THIS PROJECT IS A PART OF THE  <br> RESEARCH ON BOHUMIL HAASE AND HIS PRINTING</p>
+        </section>
+
+        <section class="pad-1 txt-t draggable">
+          <div class="i-txt ">
+            <h2 class="txt-l1 upper">PROJECT GOAL</h2>
+          </div>
+          <p class="upper"> Сreating a digital version of the book <br> GLAGOLITISCHE FRAGMENTE / Paul Josef Šafářik / 1857</p>
+      </section>
+
+          <section class="pad-1 txt-t draggable">
+                <div class="i-txt ">
+                  <h2 class="txt-l1 ">CODE</h2>
+                </div>
+                <p>(OLEKSANDR HOHULIA)</p>
+            </section>
+
+            <section class="pad-1 txt-t draggable">
+              <div class="i-txt ">
+                <h2 class="txt-l1 ">CYRILLIC FONT</h2>
+              </div>
+              <p class="upper">(MARIA CHERNOBAI + Anna Ivakhno )</p>
+          </section>
+
+          <section class="pad-1 txt-t draggable">
+            <div class="i-txt ">
+              <h2 class="txt-l1 ">GLAGOLITIC FONT</h2>
+            </div>
+            <p class="upper">(Victoria Naumuk )</p>
+        </section>
+
+
+
+          </main>
+        </div>
+        <script>
+const draggableElements = document.querySelectorAll('.draggable');
+let activeElement = null;
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+
+draggableElements.forEach(element => {
+  randomizePosition(element);
+
+  element.addEventListener('mousedown', startDragging);
+  element.addEventListener('touchstart', startDragging);
+  element.addEventListener('mousemove', drag);
+  element.addEventListener('touchmove', drag);
+  element.addEventListener('mouseup', stopDragging);
+  element.addEventListener('touchend', stopDragging);
+  element.addEventListener('mouseleave', stopDragging);
+});
+
+function randomizePosition(element) {
+  const randomX = Math.floor(Math.random() * (window.innerWidth - element.offsetWidth));
+  const randomY = Math.floor(Math.random() * (window.innerHeight - element.offsetHeight));
+  element.style.left = `${randomX}px`;
+  element.style.top = `${randomY}px`;
+
+  if (isOverlapping(element)) {
+    randomizePosition(element);
+  }
+}
+
+function isOverlapping(element) {
+  const rect1 = element.getBoundingClientRect();
+  for (let i = 0; i < draggableElements.length; i++) {
+    if (draggableElements[i] !== element) {
+      const rect2 = draggableElements[i].getBoundingClientRect();
+      if (
+        rect1.left < rect2.right &&
+        rect1.right > rect2.left &&
+        rect1.top < rect2.bottom &&
+        rect1.bottom > rect2.top
+      ) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+// Остальной код без изменений
+function startDragging(event) {
+  event.preventDefault();
+  activeElement = this;
+
+  if (event.type === 'mousedown') {
+    offsetX = event.clientX - activeElement.getBoundingClientRect().left;
+    offsetY = event.clientY - activeElement.getBoundingClientRect().top;
+  } else if (event.type === 'touchstart') {
+    offsetX = event.touches[0].clientX - activeElement.getBoundingClientRect().left;
+    offsetY = event.touches[0].clientY - activeElement.getBoundingClientRect().top;
+  }
+
+  activeElement.style.cursor = 'grabbing';
+  activeElement.style.userSelect = 'none';
+  activeElement.style.zIndex = 1; // Поднимаем активный элемент над другими
+  isDragging = true;
+}
+
+function drag(event) {
+  if (!activeElement) return;
+  if (!isDragging) return;
+
+  event.preventDefault();
+
+  let clientX, clientY;
+  if (event.type === 'mousemove') {
+    clientX = event.clientX;
+    clientY = event.clientY;
+  } else if (event.type === 'touchmove') {
+    clientX = event.touches[0].clientX;
+    clientY = event.touches[0].clientY;
+  }
+
+  const newX = clientX - offsetX;
+  const newY = clientY - offsetY;
+
+  activeElement.style.left = `${newX}px`;
+  activeElement.style.top = `${newY}px`;
+}
+
+function stopDragging() {
+  activeElement = null;
+  this.style.cursor = 'grab';
+  this.style.userSelect = 'auto';
+  this.style.zIndex = 0; // Возвращаем исходное значение z-index
+  isDragging = false;
+}
+
+
+  </script>
+  
+</body>
+</html>
