@@ -2,7 +2,6 @@
 
 ### 📷 Preview
 
-*(Place a screenshot of your website here. For example: `![Website Preview](./preview.png)`)*
 ![Website Preview](./preview.png)
 
 A web-based digitalization and typographic interpretation of the historical book *"Glagolitische Fragmente"* (1857) by Karl Adolph Constantin Höfler and Paul Joseph Šafařík.
