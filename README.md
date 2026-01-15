@@ -8,7 +8,7 @@ Developed as part of the **Clausura (Winter Semester)** project at the **[AAAD /
 
 ---
 
-![Website Preview](./preview.png)
+![Website Preview](./preview.gif)
 
 ---
 
