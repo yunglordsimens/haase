@@ -1,14 +1,16 @@
 # Glagolitische Fragmente
 
-### Preview
-
-![Website Preview](./preview.png)
-
 A web-based digitalization and typographic interpretation of the historical book *"Glagolitische Fragmente"* (1857) by Karl Adolph Constantin Höfler and Paul Joseph Šafařík.
 
 Developed as part of the **Clausura (Winter Semester)** project at the **[AAAD / UMPRUM](https://www.umprum.cz/) Studio of Typography**.
 
 🔗 **[View Live Website](https://yunglordsimens.github.io/haase/)**
+
+---
+
+### Preview
+
+![Website Preview](./preview.png)
 
 ---
 
