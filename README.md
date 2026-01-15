@@ -1,6 +1,6 @@
 # Glagolitische Fragmente
 
-### 📷 Preview
+### Preview
 
 ![Website Preview](./preview.png)
 
@@ -12,13 +12,13 @@ Developed as part of the **Clausura (Winter Semester)** project at the **[AAAD /
 
 ---
 
-## 📜 About the Project
+## About the Project
 
 This project explores the digital translation of historical Glagolitic scripts and texts. It combines modern web technologies with custom type design to reimagine the original manuscript for a digital context.
 
 **Date:** January 2023
 
-## 👥 Credits
+## Credits
 
 | Role | Name |
 | :--- | :--- |
@@ -26,11 +26,11 @@ This project explores the digital translation of historical Glagolitic scripts a
 | **Development** | Oleksandr Hohulia |
 | **Custom Fonts** | Maria Chernobay, Anna Ivakhno, Viktoria Naumuk |
 
-## 🔠 Typography
+## Typography
 
 The website features custom typefaces designed specifically for this digitalization project, focusing on the historical accuracy and aesthetic of the Glagolitic script within a contemporary layout.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * HTML5 / CSS3
 * JavaScript
